@@ -1,0 +1,9 @@
+class QFun {
+	constructor() {
+
+	};
+
+	draw() {
+
+	};
+};
