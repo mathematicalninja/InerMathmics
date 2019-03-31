@@ -1,9 +1,14 @@
 class QOper {
-	constructor(OPERAND, Num1, Num2) {
-
+	constructor(OPERAND, x) {
+		this.string = OPERAND
+		this.x = x
 	};
 
-	draw() {
-
+	draw(x, y) {
+		fill(255)
+		text(this.string, this.x, 100)
+	};
+	getWidth() {
+		return textWidth(this.string);
 	};
 };

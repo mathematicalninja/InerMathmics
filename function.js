@@ -3,7 +3,10 @@ class QFun {
 
 	};
 
-	draw() {
+	draw(x, y) {
 
+	};
+	getWidth() {
+		return textWidth(this.string);
 	};
 };
