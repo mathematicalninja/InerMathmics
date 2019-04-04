@@ -36,8 +36,7 @@ class QString {
 		let Open = matchAll(string, this.RegOpen);
 		let Close = reverse(matchAll(string, this.RegClose));
 		if (!(Open[0])) {
-			this.OpenCheck(string, text_x)
-			return
+			return this.OpenCheck(string, text_x)
 		}
 
 
@@ -71,21 +70,15 @@ class QString {
 		let A = NewList[0].index;
 		let B = NewList[NewList.length - 1].index
 
-		print(this.CurrentLeft);
-		print(string.substring(0, A), text_x)
-		this.CurrentLeft = this.OpenCheck(string.substring(0, A), text_x);
-		print(this.CurrentLeft);
-		this.CurrentLeft = this.CloseCheck(string.substring(A + 1, B), text_x)
-		print(this.CurrentLeft);
-		this.CurrentLeft = this.QSlow(string.substring(B + 1, string.length))
-
-
+		this.CurrentLeft = this.OpenCheck(string.substring(0, A), this.CurrentLeft);
+		this.CurrentLeft = this.CloseCheck(string.substring(A + 1, B), this.CurrentLeft)
+		this.CurrentLeft = this.QSlow(string.substring(B + 1, string.length), this.CurrentLeft)
+		return this.CurrentLeft
 	};
 
 
 
 	CloseCheck(string, x) {
-		print("Close")
 		let Temp = new QClose(string, x);
 		append(this.Chuncks, Temp);
 		return x + Temp.getWidth();
@@ -95,7 +88,6 @@ class QString {
 
 
 	OpenCheck(string, x) {
-		print("Open")
 		// let FunctionList = ["sin","cos","tan","p","q","f","g","h","log","exp"]
 		let OperList = ["\\+", "-", "\\*", "\\/", "="]
 		// let Rolling = 0
@@ -110,8 +102,6 @@ class QString {
 		};
 		let Temp = new QOpen(string, x)
 		append(this.Chuncks, Temp);
-		print(x)
-		print(x + Temp.getWidth())
 		return x + Temp.getWidth();
 
 	};
