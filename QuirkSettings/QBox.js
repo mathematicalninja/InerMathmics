@@ -7,17 +7,17 @@ class QBox {
 		if (colour) {
 			this.colour = colour;
 		} else {
-			this.colour = color(255)
+			this.colour = color(255);
 		};
 		if (border) {
 			this.border = border;
 		} else {
-			this.border = color(255)
+			this.border = color(255);
 		};
 		if (show != undefined) {
-			this.show = show
+			this.show = show;
 		} else {
-			this.show = true
+			this.show = true;
 		};
 	};
 
@@ -40,10 +40,10 @@ class QBox {
 	};
 
 	getCenter() {
-		return [(this.right + this.left) / 2, (this.bottom + this.top) / 2]
+		return [(this.right + this.left) / 2, (this.bottom + this.top) / 2];
 	};
 
 	setTransparency(Val) {
-		this.colour.setAlpha(Val)
+		this.colour.setAlpha(Val);
 	};
 };

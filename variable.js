@@ -4,17 +4,16 @@ class QVar {
 		if (Qbox) {
 			this.box = Qbox;
 		} else {
-			this.box = new QBox(10, 10, 50, 50)
+			this.box = new QBox(10, 10, 50, 50);
 		}
 	};
 
 	draw() {
-		// this.box.draw()
 		push();
 
+		this.box.draw();
 		fill(255, 255, 255);
-		text(this.string, this.box.left, this.box.top - textDescent() + 1)
-		// text(this.text, x, y)
+		text(this.string, this.box.left, this.box.top - textDescent() + 1);
 
 		pop();
 	};
