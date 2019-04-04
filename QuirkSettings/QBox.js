@@ -1,5 +1,5 @@
 class QBox {
-	constructor(top, left, bottom, right, colour, border) {
+	constructor(top, left, bottom, right, colour, border, show) {
 		this.top = top;
 		this.bottom = bottom;
 		this.left = left;
@@ -14,16 +14,25 @@ class QBox {
 		} else {
 			this.border = color(255)
 		};
+		if (show != undefined) {
+			this.show = show
+		} else {
+			this.show = true
+		};
 	};
 
 	draw() {
-		print(this.left, this.top, this.right - this.left, this.bottom - this.top)
+		if (this.show) {
+			push();
 
-		push()
-		fill(this.colour);
-		stroke(this.border)
-		rect(this.left, this.top, this.right - this.left, this.bottom - this.top)
-		pop()
+
+			fill(this.colour);
+			stroke(this.border);
+			rect(this.left, this.top, this.right - this.left, this.bottom - this.top);
+
+
+			pop();
+		};
 	};
 
 	getCoords() {

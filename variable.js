@@ -1,6 +1,6 @@
-class QNum {
-	constructor(INT, Qbox) {
-		this.string = INT.toString();
+class QVar {
+	constructor(STR, Qbox) {
+		this.string = STR;
 		if (Qbox) {
 			this.box = Qbox;
 		} else {
@@ -9,12 +9,11 @@ class QNum {
 	};
 
 	draw() {
+		// this.box.draw()
 		push();
 
 		fill(255, 255, 255);
-		this.box.draw()
 		text(this.string, this.box.left, this.box.top - textDescent() + 1)
-
 		// text(this.text, x, y)
 
 		pop();
