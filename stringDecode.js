@@ -144,6 +144,9 @@ class QString {
 				for (let currentMatch of CurrentMatchList) {
 					currentMatch.type = "Function";
 					append(matchList, currentMatch);
+
+
+					// add in a clause to match "log" as "log" not "g"
 				};
 			};
 		};
@@ -154,6 +157,22 @@ class QString {
 				for (let currentMatch of CurrentMatchList) {
 					currentMatch.type = "Operation";
 					append(matchList, currentMatch);
+				};
+			};
+		};
+
+
+		for (let reg of this.varReg) {
+			if (match(string, reg)) {
+				let CurrentMatchList = matchAll(string, reg);
+				for (let currentMatch of CurrentMatchList) {
+					currentMatch.type = "Variable";
+					append(matchList, currentMatch);
+
+
+
+					// add in a clause to prevent double matching the
+					// "s" in "sin" as a variable and a function
 				};
 			};
 		};
@@ -190,6 +209,8 @@ class QString {
 		};
 	};
 
+
+
 	makeDigit(Match) {
 
 		let string = Match[1]
@@ -207,7 +228,6 @@ class QString {
 		this.Currentleft += textWidth(string)
 	};
 
-
 	makeFunction(Match) {
 		let string = Match[1]
 		let top = this.y;
@@ -219,7 +239,6 @@ class QString {
 		let show = true;
 		this.CurrentFunction = string
 	};
-
 
 	makeOperation(Match) {
 		let string = Match[1]
@@ -238,7 +257,6 @@ class QString {
 		this.Currentleft += textWidth(string)
 	};
 
-
 	makeVariable(Match) {
 		let string = Match[1]
 		let top = this.y;
@@ -255,12 +273,12 @@ class QString {
 	};
 
 
-
 	RegExMake() {
 
 		this.operReg = [];
 		let FunctionList = ["sin", "cos", "tan", "p", "q", "f", "g", "h", "log", "exp"];
 		let OperList = ["\\+", "-", "\\*", "\\/", "="];
+		let VarList = ["a", "b", "c", "d", "s", "u", "v", "w", "x", "y", "z", "θ", "α", "β", "γ", "δ", "ε", "φ", "ω", ]
 		for (let op of OperList) {
 			let Regs = new RegExp("(?:\\s*)(" + op + ")");
 			append(this.operReg, Regs);
@@ -269,6 +287,12 @@ class QString {
 		for (let func of FunctionList) {
 			let Regs = new RegExp("(?:\\s*)(" + func + ")(?:\\s*)$");
 			append(this.funcReg, Regs);
+		};
+		this.varReg = [];
+		for (let Var of VarList) {
+			let Regs = new RegExp("(?:\\s*)(" +
+				Var + ")");
+			append(this.varReg, Regs);
 		};
 	};
 

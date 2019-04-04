@@ -12,6 +12,8 @@ function setup() {
 
 function draw() {
 	// BackgroungColour = color(255, 0, 0)
+
+	// translate(0, -50)
 	QuirkDraw();
 	noLoop();
 
@@ -20,7 +22,7 @@ function draw() {
 	// Flip.draw();
 
 
-	Twiddle = new QString("y=(3y+4) + (2x-3)-6*   +  3*11(x+1)/sin(x+2)", windowHeight / 2);
+	Twiddle = new QString("y=(3y+4) + exp(2x-3)-6*   +  3*11+log(x+1)/sin(x+2)", windowHeight / 2);
 	// Twiddle = new QString("66-55+32", windowHeight / 2);
 	// Twiddle = new QString("(3+(x+4)+2)", windowHeight / 2);
 	Twiddle.draw()

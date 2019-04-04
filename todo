@@ -1,1 +1,5 @@
-change chunck.draw to calculate off of it's own internal x,y co-ordinates
+exp matches x as a var, p as a Function
+
+log matches g as a function
+
+sin double matches s, as a var "s" and a func "sin"
