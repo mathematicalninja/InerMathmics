@@ -112,9 +112,9 @@ class QString {
 			Name = this.CurrentFunction
 		}
 
-		let top = this.y + 100;
+		let top = this.y;
 		let left = this.Currentleft;
-		let bottom = this.y - theSizeOfText + 100;
+		let bottom = this.y - theSizeOfText;
 		let right = this.Currentleft + textWidth(Name + "(" + string + ")");
 		let colour = color(255, 0, 255, 10);
 		let border = color(0, 255, 255);
@@ -193,9 +193,9 @@ class QString {
 	makeDigit(Match) {
 
 		let string = Match[1]
-		let top = this.y + 100;
+		let top = this.y;
 		let left = this.Currentleft;
-		let bottom = this.y - theSizeOfText + 100;
+		let bottom = this.y - theSizeOfText;
 		let right = this.Currentleft + textWidth(string);
 		let colour = color(255, 0, 255, 10);
 		let border = color(0, 255, 255);
@@ -210,9 +210,9 @@ class QString {
 
 	makeFunction(Match) {
 		let string = Match[1]
-		let top = this.y + 100;
+		let top = this.y;
 		let left = this.Currentleft;
-		let bottom = this.y - theSizeOfText + 100;
+		let bottom = this.y - theSizeOfText;
 		let right = this.Currentleft + textWidth(string);
 		let colour = color(255, 0, 255, 10);
 		let border = color(0, 255, 255);
@@ -223,9 +223,9 @@ class QString {
 
 	makeOperation(Match) {
 		let string = Match[1]
-		let top = this.y + 100;
+		let top = this.y;
 		let left = this.Currentleft;
-		let bottom = this.y - theSizeOfText + 100;
+		let bottom = this.y - theSizeOfText;
 		let right = this.Currentleft + textWidth(string);
 		let colour = color(255, 0, 255, 10);
 		let border = color(0, 255, 255);
@@ -241,9 +241,9 @@ class QString {
 
 	makeVariable(Match) {
 		let string = Match[1]
-		let top = this.y + 100;
+		let top = this.y;
 		let left = this.Currentleft;
-		let bottom = this.y - theSizeOfText + 100;
+		let bottom = this.y - theSizeOfText;
 		let right = this.Currentleft + textWidth(string);
 		let colour = color(255, 0, 255, 10);
 		let border = color(0, 255, 255);
