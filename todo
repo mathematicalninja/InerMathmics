@@ -3,3 +3,29 @@ exp matches x as a var, p as a Function
 log matches g as a function
 
 sin double matches s, as a var "s" and a func "sin"
+
+
+mouse global QBox
+ - mouse drag and drop
+ - mouse highlight
+
+mouse doubleclick
+ - selecting a QBox
+
+
+dragging animation
+
+selected closed term
+ - create newline
+ - drag animation
+ - breakdown anilising
+
+
+
+QuirkSettings/Colours.js
+ - find a colection of nice complimentary Colours
+ - Label Darkmode colours
+ - Label Lightmode Colours
+ - etc.
+
+ 

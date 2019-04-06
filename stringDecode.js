@@ -276,9 +276,9 @@ class QString {
 	RegExMake() {
 
 		this.operReg = [];
-		let FunctionList = ["sin", "cos", "tan", "p", "q", "f", "g", "h", "log", "exp"];
+		let FunctionList = ["sin", "cos", "tan", "(?:!ex)p", "q", "f", "(?:!o)g", "h", "log", "exp"];
 		let OperList = ["\\+", "-", "\\*", "\\/", "="];
-		let VarList = ["a", "b", "c", "d", "s", "u", "v", "w", "x", "y", "z", "θ", "α", "β", "γ", "δ", "ε", "φ", "ω", ]
+		let VarList = ["(?:!t)a", "b", "c(?:!os)", "d", "(?:![ai])n", "(?:!co)s(?:!in)", "u", "v", "w", "(?:!e)x", "y", "z", "θ", "α", "β", "γ", "δ", "ε", "φ", "ω", ]
 		for (let op of OperList) {
 			let Regs = new RegExp("(?:\\s*)(" + op + ")");
 			append(this.operReg, Regs);
